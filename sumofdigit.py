@@ -1,4 +1,4 @@
-x=[1,34,4,432,2,324,657,54,48]
+x=map(int,input().split())
 max=0
 for y in x:
     if(y>max):
