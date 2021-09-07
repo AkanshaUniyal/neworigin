@@ -1,3 +1,6 @@
+
+/*A ceiing number is the smallest number which is greater than or equal to the target element in a given array.*/
+
 import java.io.*;
 import java.util.*;
 import javax.lang.model.util.ElementScanner14;
@@ -72,4 +75,8 @@ public class ceiling_number{
             System.out.println("Ceiling of the target is "+arr[u+1]+" at index "+(u+1));
         }
     }
+
 }
+
+}
+
