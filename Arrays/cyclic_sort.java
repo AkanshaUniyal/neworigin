@@ -1,11 +1,9 @@
-
-/*A ceiing number is the smallest number which is greater than or equal to the target element in a given array.*/
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
-import javax.lang.model.util.ElementScanner14;
-
-public class ceiling_number{
+import java.util.StringTokenizer;
+public class cyclic_sort{
     static class FastReader{
         BufferedReader br;
         StringTokenizer st;
@@ -42,41 +40,24 @@ public class ceiling_number{
             return str;
         }
     }
-
-    public static void main(String args[]){
+    public static void main(String [] sd){
         FastReader fr=new FastReader();
-        System.out.println("Ener the length of array");
-        int n=fr.nextInt();
-        int [] arr=new int[n];
-        System.out.println("Enter array elements");
+        int n=fr.nextInt();int m=0,k=0;
+        int [] a=new int[n];
         for(int i=0;i<n;i++){
-            arr[i]=fr.nextInt();
+            a[i]=fr.nextInt();
         }
-        System.out.println("Enter the target number");
-        int target=fr.nextInt();
-        int l=0,u=n-1,mid=0,k=0;
-
-        while(l<u){
-            mid=(l+u)/2;
-
-            if(arr[mid]>target){
-                u=mid-1;
+        for(int y=0;y<n-1;){
+            k++;
+            if(a[y]!=y+1){
+                m=a[y];
+                a[y]=y+1;
+                a[m-1]=m;
             }
-            else if(arr[mid]<target){
-                l=mid+1;
-            }
-            else if(arr[mid]==target){
-                k=1;
-                System.out.println("Ceiling of the target is "+arr[mid]+" at index "+(mid+1));
-                break;
+            else{
+                y++;
             }
         }
-        if(k!=1){
-            System.out.println("Ceiling of the target is "+arr[u+1]+" at index "+(u+1));
-        }
+        System.out.println(Arrays.toString(a)+" "+k);
     }
-
 }
-
-}
-
