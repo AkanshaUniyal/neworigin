@@ -1,10 +1,12 @@
 #include <stdio.h>
 int main()
 {
-   char a=new char[3];
-   for(int i=0;i<3;i++)
-   {
-   scanf("%c",a[i]);
-   }
+  int i,j,count=0;
+  for(int i=0;i<5;i++);{
+     for(j=0;j<5;j++);{
+        count++;
+     }
+  }
+  printf("%d",count);
    return 0;
 }
